@@ -3,22 +3,21 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
-
 use Illuminate\Http\Request;
+use App\Models\Activity;
 
-class UserController extends Controller
+class ActivityController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
-        $data=User::all();
+    public function index()
+    {
+         $data=Activity::all();
 
-
-        return view('admin.user.show',['data'=>$data]);
+        return view('admin.activity.show',['data'=> $data]);
 
     }
 
@@ -29,7 +28,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.user.create');
+        return view('admin.activity.create');
 
     }
 
@@ -41,25 +40,23 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'name' => ['required', 'string', 'max:255'],
-        //     'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-        //     'phone' => ['required', 'max:10'],
-        //     'password' => ['required', Rules\Password::defaults()],
-        // ]);
-        // $user=User::create([
+        $photoName = $request->file('activity_image1')->getClientOriginalName();
+        $request->file('activity_image1')->storeAs('public/image', $photoName);
+        $photoName2 = $request->file('activity_image2')->getClientOriginalName();
+        $request->file('activity_image2')->storeAs('public/image', $photoName2);
 
-        //     'name' => $request->name,
-        //     'email' => $request->email,
-        //     'phone' => $request->phone,
-        //     'password' => Hash::make($request->phone),
-        //     'is_admin' => $request->select,
+        Activity::create([
 
-        // ]);
-        // event(new Registered($user));
+            'name' => $request->activity_name,
+            'short_description' => $request->short_description,
+            'long_description' => $request->long_description,
+            'price' => $request->activity_price,
+            'image1' => $photoName,
+            'image2' => $photoName2,
 
+        ]);
 
-        // return redirect()->route('admin.users.show');
+        return redirect()->route('admin.activity.index');
     }
 
     /**
@@ -104,7 +101,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        User::findOrfail($id)->delete();
-        return redirect()->route('admin.users.show');
+        //
     }
 }

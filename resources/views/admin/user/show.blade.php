@@ -25,7 +25,7 @@ user-shoe
 @section('content')
 
  <!-- /.row -->
- <div class="row">
+ <div class="row container m-auto">
     <div class="col-9">
       <div class="card">
         <div class="card-header">
@@ -49,29 +49,36 @@ user-shoe
             <thead>
               <tr>
                 <th>ID</th>
-                <th>User</th>
-                <th>email</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Password</th>
                 <th>is_admin</th>
-                <th>delete</th>
+                <th>Delete</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>183</td>
-                <td>John Doe</td>
-                <td>11-7-2014</td>
-                <td><span class="tag tag-success">Approved</span></td>
-                <td><button type="button" class="btn btn-block btn-danger btn-sm">Danger</button>
-                </td>
-              </tr>
-              <tr>
-                <td>219</td>
-                <td>Alexander Pierce</td>
-                <td>11-7-2014</td>
-                <td><span class="tag tag-warning">Pending</span></td>
-                <td><button type="button" class="btn btn-block btn-danger btn-sm">Danger</button>
-                </td>
-              </tr>
+                @foreach ($data as $value)
+
+                <tr>
+                    <td>{{$value->id}}</td>
+                    <td>{{$value->name}}</td>
+                    <td>{{$value->email	}}</td>
+                    <td>{{$value->phone	}}</td>
+                    <td>{{$value->password	}}</td>
+                    <td>{{$value->is_admin	}}</td>
+
+                    <td>
+                        <form action="{{Route('admin.users.destroy',$value->id)}}" method="post">
+                            @method('delete')
+                            @csrf
+                            <button type="submit" class="btn btn-block bg-gradient-danger btn-sm">Delete</button>
+                        </form>
+                    </td>
+
+                </tr>
+                @endforeach
+
             </tbody>
           </table>
         </div>
