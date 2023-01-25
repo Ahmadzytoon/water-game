@@ -3,22 +3,18 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
-
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class ReservationController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
-        $data=User::all();
-
-
-        return view('admin.user.show',['data'=>$data]);
+    public function index()
+    {
+        return view('admin.reservation.show');
 
     }
 
@@ -29,8 +25,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.user.create');
-
+        //
     }
 
     /**
@@ -41,25 +36,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'name' => ['required', 'string', 'max:255'],
-        //     'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-        //     'phone' => ['required', 'max:10'],
-        //     'password' => ['required', Rules\Password::defaults()],
-        // ]);
-        // $user=User::create([
-
-        //     'name' => $request->name,
-        //     'email' => $request->email,
-        //     'phone' => $request->phone,
-        //     'password' => Hash::make($request->phone),
-        //     'is_admin' => $request->select,
-
-        // ]);
-        // event(new Registered($user));
-
-
-        // return redirect()->route('admin.users.show');
+        //
     }
 
     /**
@@ -104,7 +81,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        User::findOrfail($id)->delete();
-        return redirect()->route('admin.users.show');
+        //
     }
 }

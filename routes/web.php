@@ -2,10 +2,10 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\ActivityController;
-use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\Admin\ActivityController;
+use App\Http\Controllers\Admin\ReservationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

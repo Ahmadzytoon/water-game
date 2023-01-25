@@ -42,7 +42,7 @@
                 <i class="right fas "></i>
               </p>
             </a>
-  
+
           </li>
           {{-- _______________________________________ --}}
           {{-- <li class="nav-item">
@@ -64,7 +64,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/layout/top-nav.html" class="nav-link @yield('Reservation')">
+                <a href="{{route('admin.reservation.index')}}" class="nav-link @yield('Reservation')">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Show</p>
                 </a>
@@ -89,7 +89,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/charts/chartjs.html" class="nav-link @yield('Activity')">
+                <a href="{{route('admin.activity.index')}}" class="nav-link @yield('Activity')">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Show</p>
                 </a>
@@ -120,7 +120,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('admin.users.index')}} class="nav-link @yield('Users')">
+                <a href="{{route('admin.users.index')}}" class="nav-link @yield('Users')">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Show</p>
                 </a>
@@ -136,12 +136,12 @@
                   <i class="far fa-circle nav-icon"></i>
                   <p>Create</p>
                 </a>
-              
+
             </ul>
           </li>
            {{-- _______________________________________ --}}
 
-          
+
           {{-- _______________________________________ --}}
           <li class="nav-header">_________</li>
           <li class="nav-item">
@@ -151,7 +151,7 @@
             </a>
           </li>
           {{-- _______________________________________ --}}
-         
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
