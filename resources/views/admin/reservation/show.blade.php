@@ -88,20 +88,20 @@ table
                   <td>{{$value['activity']	}}</td>
                   <td>{{$value['user']	}}</td>
 
-                  <td>
+                  {{-- <td>
                       <form action="{{Route('admin.users.destroy',$value->id)}}" method="post">
                           @method('delete')
                           @csrf
                           <button type="submit" class="btn btn-block btn-sm">Accept</button>
                       </form>
-                  </td>
-                  <td>
+                  </td> --}}
+                  {{-- <td>
                     <form action="{{Route('admin.users.destroy',$value->id)}}" method="post">
                         @method('delete')
                         @csrf
                         <button type="submit" class="btn btn-block bg-gradient-danger btn-sm">Cancel</button>
                     </form>
-                </td>
+                </td> --}}
 
               </tr>
               @endforeach
