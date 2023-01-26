@@ -54,12 +54,13 @@ table
               <th>last_name</th>
               <th>Phone Number</th>
               <th>email</th>
+              <th>date</th>
               <th>price</th>
               <th>status</th>
               <th>activity</th>
               <th>user name</th>
               <th>Request Accept</th>
-              <th>Delete</th>
+              <th>Rejected</th>
             </tr>
           </thead>
           <tbody>
@@ -85,10 +86,10 @@ table
                   <td><span class="badge bg-danger">Rejected</span></td>
 
                   @endif
-                  <td>{{$value['activity']	}}</td>
-                  <td>{{$value['user']	}}</td>
+                  <td>{{$value['activity']}}</td>
+                  <td>{{$value['user']}}</td>
 
-                  <td>
+                  {{-- <td>
                       <form action="{{Route('admin.users.destroy',$value->id)}}" method="post">
                           @method('delete')
                           @csrf
@@ -101,7 +102,7 @@ table
                         @csrf
                         <button type="submit" class="btn btn-block bg-gradient-danger btn-sm">Cancel</button>
                     </form>
-                </td>
+                </td> --}}
 
               </tr>
               @endforeach

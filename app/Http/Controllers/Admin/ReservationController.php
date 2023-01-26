@@ -30,8 +30,6 @@ class ReservationController extends Controller
                 'status' => $reservation->status,
                 'activity' => isset($reservation->activity) ? $reservation->activity->name : "",
                 'user' => isset($reservation->user) ? $reservation->user->name : "",
-
-
             ];
         }
         return view('admin.reservation.show',['data'=>$data]);
@@ -56,7 +54,22 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
-  
+             // Reservation::create([
+
+        //     'first_name' => $request->first_name,
+        //     'last_name' => $request->last_name,
+        //     'phoneNumber' => $request->phoneNumber,
+        //     'email' => $request->email,
+        //     'number_of_guest' => $request->number_of_guest,
+        //     'res_date' => $request->res_date,
+        //     'price' => $request->price,
+        //     'status' => $request->status,
+        //     'trip_id' => $request->select,
+
+
+        // ]);
+
+        // return redirect()->route('admin.reservation.index');
     }
 
     /**
@@ -91,7 +104,21 @@ class ReservationController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // $data = Reservation::findOrfail($id);
+        // // $data->first_name = $request->first_name;
+        // // $data->last_name = $request->last_name;
+        // // $data->phoneNumber = $request->phoneNumber;
+        // // $data->email = $request->email;
+        // // $data->number_of_guest = $request->number_of_guest;
+        // // $data->res_date = $request->res_date;
+        // // $data->price = $request->price;
+        // $data->status = $request->status;
+        // // $data->trip_id = $request->select;
 
+        // $data->save();
+        // //-------------------------------
+
+        // return redirect()->route('admin.reservation.index');
         // ____________________ahmad________________________________________________
         // $data = Reservation::findOrfail($id);
         // $data->status = $request->status;
@@ -107,6 +134,12 @@ class ReservationController extends Controller
      */
     public function destroy($id)
     {
-      
+        // Reservation::findOrfail($id)->delete();
+        // return redirect()->route('admin.reservation.index');
+        // ___________________________
+        // $data = Reservation::findOrfail($id);
+        // $data->status = $request->status;
+        // $data->save();
     }
+
 }

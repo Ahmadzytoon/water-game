@@ -19,6 +19,9 @@ class Admin
 
         if(!auth()->check() || !auth()->user()->is_admin) {
             abort(403);
+            // return ('ahmad');
+                        // return redirect('/dashboard');
+
           }
 
 

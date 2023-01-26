@@ -11,7 +11,7 @@ class Reservation extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = ['first_name', 'last_name', 'phoneNumber','email','number_of_guest','res_date','price','status','trip'];
+    protected $fillable = ['first_name', 'last_name', 'phoneNumber','email','number_of_guest','res_date','price','status','activity'];
 
     public function activity()
     {
