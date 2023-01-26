@@ -15,10 +15,10 @@
 @endsection
 
 @section('title_page1')
-    home
+    Table
 @endsection
 @section('title_page2')
-user-shoe
+User
 @endsection
 
 
@@ -26,10 +26,10 @@ user-shoe
 
  <!-- /.row -->
  <div class="row container m-auto">
-    <div class="col-9">
+    <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Fixed Header Table</h3>
+          <h3 class="card-title">User Table</h3>
 
           <div class="card-tools">
             <div class="input-group input-group-sm" style="width: 150px;">

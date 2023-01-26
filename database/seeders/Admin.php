@@ -23,7 +23,6 @@ class Admin extends Seeder
         
         'name' => 'Admin',
         'email' => 'admin@gmail.com',
-        'email_verified_at' => now(),
         'password' => bcrypt('123456789'),
         'remember_token' => Str::random(10),
         'is_admin' => 1
@@ -34,7 +33,6 @@ class Admin extends Seeder
         
             'name' => 'amro',
             'email' => 'amro@gmail.com',
-            'email_verified_at' => now(),
             'password' => bcrypt('123456789'),
             'remember_token' => Str::random(10),
             'is_admin' => 1
@@ -44,7 +42,6 @@ class Admin extends Seeder
         
                 'name' => 'ahmad',
                 'email' => 'ahmad@gmail.com',
-                'email_verified_at' => now(),
                 'password' => bcrypt('123456789'),
                 'remember_token' => Str::random(10),
                 'is_admin' => 1

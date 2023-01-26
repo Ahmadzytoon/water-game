@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('last_name');
             $table->integer('phoneNumber');
             $table->string('email');
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->foreignId('activity_id')->constrained('activities')->onDelete('cascade');
+            // $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            // $table->foreignId('activity_id')->constrained('activities')->onDelete('cascade');
             $table->string('status')->default('pending');
             $table->integer('number_of_guest');
             $table->dateTime('res_date');

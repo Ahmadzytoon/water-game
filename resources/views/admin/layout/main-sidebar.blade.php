@@ -44,6 +44,7 @@
             </a>
 
           </li>
+
           {{-- _______________________________________ --}}
           {{-- <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
@@ -94,14 +95,14 @@
                   <p>Show</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="pages/charts/flot.html" class="nav-link @yield('Activity')">
+              {{-- <li class="nav-item">
+                <a href="{{route('admin.activity.edit')}}" class="nav-link @yield('Activity')">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Edite</p>
+                  <p>Edit</p>
                 </a>
-              </li>
+              </li> --}}
               <li class="nav-item">
-                <a href="pages/charts/inline.html" class="nav-link @yield('Activity')">
+                <a href="{{route('admin.activity.create')}}" class="nav-link @yield('Activity')">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Create</p>
                 </a>
@@ -125,7 +126,7 @@
                   <p>Show</p>
                 </a>
               </li>
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a href="pages/UI/general.html" class="nav-link @yield('Users')">
                   <i class="nav-icon fas fa-edit"></i>
                   <p>Edite</p>
@@ -135,7 +136,7 @@
                 <a href="pages/UI/icons.html" class="nav-link @yield('Users')">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Create</p>
-                </a>
+                </a> --}}
 
             </ul>
           </li>

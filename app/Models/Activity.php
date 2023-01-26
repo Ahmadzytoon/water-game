@@ -12,4 +12,12 @@ class Activity extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $fillable = [
+        'name',
+        'short_description',
+        'long_description',
+        'price',
+        'image1',
+        'image2',
+    ];
 }

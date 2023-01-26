@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-    user
+Activity
 @endsection
 
 @section('css')
@@ -15,10 +15,10 @@
 @endsection
 
 @section('title_page1')
-    home
+Table
 @endsection
 @section('title_page2')
-user-shoe
+Activity
 @endsection
 
 
@@ -26,10 +26,10 @@ user-shoe
 
  <!-- /.row -->
  <div class="row container m-aut">
-    <div class="col-9">
+    <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Fixed Header Table</h3>
+          <h3 class="card-title">Activity Table</h3>
 
           <div class="card-tools">
             <div class="input-group input-group-sm" style="width: 150px;">
@@ -60,13 +60,14 @@ user-shoe
               </tr>
             </thead>
             <tbody>
+              @foreach ($data as $value)
                 <tr>
                     <td>{{$value->id}}</td>
                     <td>{{$value->name}}</td>
                     <td>{{$value->short_description	}}</td>
                     <td>{{$value->long_description	}}</td>
-                    <td><img src="{{URL::asset("storage/public/image/".$value->image1)}}" alt="" style="width: 75px"></td>
-                    <td><img src="{{URL::asset("storage/public/image/".$value->image2)}}" alt="" style="width: 75px"></td>
+                    <td><img src="{{URL::asset("storage/image/".$value->image1)}}" alt="" style="width: 75px"></td>
+                    <td><img src="{{URL::asset("storage/image/".$value->image2)}}" alt="" style="width: 75px"></td>
                     <td>{{$value->price	}}</td>
                     <td><a href="{{Route('admin.activity.edit',$value->id)}}"><button type="button" class="btn btn-block bg-gradient-success btn-sm">Edit</button>
                     </a></td>
@@ -79,22 +80,7 @@ user-shoe
                     </td>
 
                 </tr>
-              <tr>
-                <td>183</td>
-                <td>John Doe</td>
-                <td>11-7-2014</td>
-                <td><span class="tag tag-success">Approved</span></td>
-                <td><button type="button" class="btn btn-block btn-danger btn-sm">Danger</button>
-                </td>
-              </tr>
-              <tr>
-                <td>219</td>
-                <td>Alexander Pierce</td>
-                <td>11-7-2014</td>
-                <td><span class="tag tag-warning">Pending</span></td>
-                <td><button type="button" class="btn btn-block btn-danger btn-sm">Danger</button>
-                </td>
-              </tr>
+              @endforeach
             </tbody>
           </table>
         </div>
