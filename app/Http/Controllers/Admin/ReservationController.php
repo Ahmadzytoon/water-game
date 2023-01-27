@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Activity;
 use Illuminate\Http\Request;
 use App\Models\Reservation;
 
@@ -31,6 +32,8 @@ class ReservationController extends Controller
                 'activity' => isset($reservation->activity) ? $reservation->activity->name : "",
                 'user' => isset($reservation->user) ? $reservation->user->name : "",
             ];
+
+
         }
         return view('admin.reservation.show',['data'=>$data]);
 
@@ -43,7 +46,13 @@ class ReservationController extends Controller
      */
     public function create()
     {
-  
+        
+    Reservation::create([
+        
+
+    ]);
+        return view('admin.reservations.create', compact('book'));
+
     }
 
     /**
