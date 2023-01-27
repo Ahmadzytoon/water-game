@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ActivityController;
 use App\Http\Controllers\Admin\ReservationController;
+
+use App\Http\Controllers\ContactUsFormController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,3 +40,10 @@ Route::resource('/activity',ActivityController::class);
 Route::resource('/reservation',ReservationController::class);
 });
 require __DIR__.'/auth.php';
+
+
+
+
+Route::get('/contact', [ContactUsFormController::class, 'createForm']);
+
+Route::post('/contact', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');

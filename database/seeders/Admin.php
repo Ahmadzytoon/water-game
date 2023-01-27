@@ -17,35 +17,29 @@ class Admin extends Seeder
     public function run()
     {
 
-        User::truncate();
+
 
         User::create ([
         
         'name' => 'Admin',
         'email' => 'admin@gmail.com',
+        'phone' => '0799078807',
         'password' => bcrypt('123456789'),
-        'remember_token' => Str::random(10),
         'is_admin' => 1
 
         
         ]);
+
         User::create ([
         
-            'name' => 'amro',
-            'email' => 'amro@gmail.com',
-            'password' => bcrypt('123456789'),
-            'remember_token' => Str::random(10),
-            'is_admin' => 1
- 
-            ]);
-            User::create ([
+        'name' => 'Amro',
+        'email' => 'shandaqamro@gmail.com',
+        'phone' => '0799379762',
+        'password' => bcrypt('123456789'),
+        'is_admin' => 1
+
         
-                'name' => 'ahmad',
-                'email' => 'ahmad@gmail.com',
-                'password' => bcrypt('123456789'),
-                'remember_token' => Str::random(10),
-                'is_admin' => 1
-    
-                ]);
+        ]);
+     
     }
 }

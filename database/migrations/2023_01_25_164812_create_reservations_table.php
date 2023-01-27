@@ -19,13 +19,19 @@ return new class extends Migration
             $table->string('last_name');
             $table->integer('phoneNumber');
             $table->string('email');
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->foreignId('activity_id')->constrained('activities')->onDelete('cascade');
+        
+            // $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            // $table->foreignId('activity_id')->constrained('activity_id')->onDelete('cascade');
+
+            $table->foreignId('user_id')->references('id')->on('users')->cascadeOnDelete();
+            $table->foreignId('activity_id')->references('id')->on('activities')->cascadeOnDelete();
             $table->string('status')->default('pending');
             $table->integer('number_of_guest');
             $table->dateTime('res_date');
             $table->decimal('price');
+            $table->softDeletes();
             $table->timestamps();
+            
         });
     }
 
